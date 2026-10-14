@@ -369,7 +369,7 @@ if __name__ == "__main__":
                 ),
             ],
             locations=locations,
-            description=None,
+            description="Part of the 2017 東方合同祭事 venue: https://web.archive.org/web/20170504223846/http://project-d.biz/tohosaiji/circle_list.html",
             # comments=None,
             last_edited="2026.10.14",
         )
