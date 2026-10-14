@@ -325,7 +325,15 @@ if __name__ == "__main__":
                 ],
                 comments="Illustration:鳥居すみ(airdrop)",
             ),
-            # Medium("", [Source("", (RT.Reliable, OT.Official))]),
+            Medium(
+                "04_20170326daiten.jpg",
+                [
+                    Source(
+                        "https://web.archive.org/web/20170504223846/http://project-d.biz/tohosaiji/circle_list.html",
+                        (RT.Reliable, OT.Official),
+                    )
+                ],
+            ),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
         ]
@@ -412,8 +420,15 @@ if __name__ == "__main__":
 
     # ==== event group ====
     media = [
-        Medium("eg_banner.jpg",
-               [Source("https://web.archive.org/web/20121124122035/http://kyoukai.biz/", (ReliabilityTypes.Reliable, OriginTypes.Official))]),
+        Medium(
+            "eg_banner.jpg",
+            [
+                Source(
+                    "https://web.archive.org/web/20121124122035/http://kyoukai.biz/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                )
+            ],
+        ),
         # Medium("",
         #        [Source("", (RT.Reliable, OT.Official))]),
         # Medium("",
