@@ -460,6 +460,20 @@ if __name__ == "__main__":
         last_edited="2026.10.14",
     )
 
+    # Check for missing media files and unreferenced media files
+    media = [m for e in event_group.events for m in e.media or []] + (event_group.media or [])
+    for m in media:
+        if m.path.startswith(("http://", "https://")):
+            continue
+        p = PATH_MEDIA / m.path
+        if not p.exists():
+            print(f"Warning: Medium file not found: {p}")
+
+    referenced = {m.path for m in media}
+    for p in PATH_MEDIA.rglob("*"):
+        if p.is_file() and p.relative_to(PATH_MEDIA).as_posix() not in referenced:
+            print(f"Warning: Media file not referenced in event group: {p}")
+
     print(f"Saving {Path(__file__).stem} database...")
     event_group.save(PATH_EVENT_GROUP, indent=None)
     print("Done")
